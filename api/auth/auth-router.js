@@ -1,9 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../users/')
+const User = require('../users/users-model')
 
 router.post('/register', (req, res, next) => {
-  res.json('register wired!')
+  // pull username and password from the request
+  // validate username & password
 })
 
 router.post('/login', (req, res, next) => {
