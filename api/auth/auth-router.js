@@ -30,8 +30,11 @@ router.post('/login', async (req, res, next) => {
   const { username, password } = req.body
   const user = await User.findBy({ username }).first()
 
-  if (user && bcrypt.compareSync()) {
-
+  if (user && bcrypt.compareSync(password)) {
+    // user by that username is in db
+    // password checks out
+  } else {
+    // user not in db or passwerd does not check out
   }
 })
 
