@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const helmet = require('helmet');
+const session = require('express-session');
 
 const usersRouter = require('./users/users-router.js');
 const authRouter = require('./auth/auth-router.js');
@@ -8,6 +9,9 @@ const authRouter = require('./auth/auth-router.js');
 const server = express();
 
 server.use(express.static(path.join(__dirname, '../client'))); // assets for our website
+server.use(session({
+  
+}));
 server.use(helmet());
 server.use(express.json());
 
