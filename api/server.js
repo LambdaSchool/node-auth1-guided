@@ -15,7 +15,7 @@ server.use('/api/users', usersRouter);
 server.use('/api/auth', authRouter);
 
 server.get('/hello', (req, res) => {
-  if (req.header.cookie) {
+  if (req.headers.cookie) {
     // the server has seen this client before
     res.sendStatus(`<h1>hey, nice to see you again!</h1>`)
   } else {
