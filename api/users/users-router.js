@@ -1,5 +1,5 @@
 const router = require("express").Router();
-
+const restricted = require('../auth/auth-middleware')
 const Users = require("./users-model.js");
 
 // we will protect this one
