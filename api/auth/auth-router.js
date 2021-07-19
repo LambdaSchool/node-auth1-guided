@@ -14,7 +14,10 @@ router.post('/register', async (req, res, next) => {
     username: username,
     password: hash,
   }
-  const dbUser = await User.add(new)
+  const dbUser = await User.add(newUser)
+  res.status(201).json({
+    message: `Welcome, ${use}`
+  })
 })
 
 router.post('/login', (req, res, next) => {
