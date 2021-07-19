@@ -33,6 +33,7 @@ router.post('/login', async (req, res, next) => {
   if (user && bcrypt.compareSync(password, user.password)) {
     // user by that username is in db
     // password checks out
+    req.session.user = user
   } else {
     // user not in db or passwerd does not check out
     res.status(401).json({
