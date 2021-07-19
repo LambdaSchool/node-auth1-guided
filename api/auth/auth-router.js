@@ -8,6 +8,9 @@ router.post('/register', (req, res, next) => {
   // validate username & password
   // hash the password with bcrypt
   // store user into db and send back nice message
+  const { username, password } = req.body
+  const hash = bcrypt.hashSync()
+
 })
 
 router.post('/login', (req, res, next) => {
