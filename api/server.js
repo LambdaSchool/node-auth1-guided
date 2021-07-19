@@ -14,6 +14,17 @@ server.use(express.json());
 server.use('/api/users', usersRouter);
 server.use('/api/auth', authRouter);
 
+server.get('/hello', (req, res) => {
+  if (req.header.cookie) {
+    // the server has seen this client before
+    res.sendStatus(`<h1>hey, nice to see you again!</h1>`)
+  } else {
+    // it's the first visit by this client
+    res.set('Set-Cookie', 'friend=yes; Max-Age=1000000;')
+    res.send('<h1>Nice to meet you!</h1>')
+  }
+})
+
 server.get('/', (req, res) => { // localhost:5000/ same origin as the API
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
