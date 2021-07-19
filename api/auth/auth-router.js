@@ -16,7 +16,8 @@ router.post('/register', async (req, res, next) => {
   }
   const dbUser = await User.add(newUser)
   res.status(201).json({
-    message: `Welcome, ${use}`
+    message: `Welcome, ${username}`,
+    user: dbUser,
   })
 })
 
