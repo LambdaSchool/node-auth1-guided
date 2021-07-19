@@ -25,6 +25,7 @@ router.post('/login', (req, res, next) => {
   // 1- gather username and password from req.body
   // 2- check that the username is actually present in db
   // 3- use bcrypt to verify password against hash
+  // 4- start a session for that client
 })
 
 module.exports = router
