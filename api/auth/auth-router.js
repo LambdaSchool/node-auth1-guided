@@ -26,7 +26,7 @@ router.post('/login', async (req, res, next) => {
   // 2- check that the username is actually present in db
   // 3- use bcrypt to verify password against hash
   // 4- start a session for that client (library)
-  // 5- send back a session id to the client in a response header
+  // 5- send back a session id to the client in a Set-Cookie
   const { username, password } = req.body
   const user = await User.findBy({ username }).first()
 
@@ -36,7 +36,7 @@ router.post('/login', async (req, res, next) => {
   } else {
     // user not in db or passwerd does not check out
     res.status(401).json({
-      message: ''
+      message: 'invalid credentials',
     })
   }
 })
