@@ -34,6 +34,9 @@ router.post('/login', async (req, res, next) => {
     // user by that username is in db
     // password checks out
     req.session.user = user
+    res.json({
+      message: 'welcome back, have a cookie!'
+    })
   } else {
     // user not in db or passwerd does not check out
     res.status(401).json({
