@@ -35,6 +35,9 @@ router.post('/login', async (req, res, next) => {
     // password checks out
   } else {
     // user not in db or passwerd does not check out
+    res.status(401).json({
+      message: ''
+    })
   }
 })
 
