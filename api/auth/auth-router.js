@@ -29,8 +29,10 @@ router.post('/login', (req, res, next) => {
   // 5- send back a session id to the client in a response header
   if (req.header.cookie) {
     // the server has seen this client before
+    res.sendStatus(`<h1>hey, nice to see you again!</h1>`)
   } else {
-    // 
+    // it's the first visit by this client
+    
   }
 })
 
