@@ -22,7 +22,9 @@ server.use(session({
   resave: false, // this is only necessary with some long-term session storage solutions
   saveUninitialized: false, // if true we might be in violation of GDPR laws
   store: new store({
-    knex: require('../')
+    knex: require('../database/db-config'),
+    tablename: 'sessions',
+    sidfieldname: ''
   })
 }));
 server.use(helmet());
