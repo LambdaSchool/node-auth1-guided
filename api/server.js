@@ -6,7 +6,7 @@ const usersRouter = require('./users/users-router.js');
 
 const server = express();
 
-server.use(express.static(path.join(__dirname, '../client')));
+server.use(express.static(path.join(__dirname, '../client'))); // assets for our website
 server.use(helmet());
 server.use(express.json());
 
