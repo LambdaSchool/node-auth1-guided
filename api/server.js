@@ -10,7 +10,8 @@ const server = express();
 
 server.use(express.static(path.join(__dirname, '../client'))); // assets for our website
 server.use(session({
-  
+  name: 'monkey',
+  secret: '',
 }));
 server.use(helmet());
 server.use(express.json());
