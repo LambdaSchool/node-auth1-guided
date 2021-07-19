@@ -13,6 +13,7 @@ server.use(session({
   name: 'monkey',
   secret: 'this should come from an env var',
   cookie: {
+    maxAge: 1000 * 60 * 60,
     
   }
 }));
