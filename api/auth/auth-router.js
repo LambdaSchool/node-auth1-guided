@@ -32,7 +32,7 @@ router.post('/login', (req, res, next) => {
     res.sendStatus(`<h1>hey, nice to see you again!</h1>`)
   } else {
     // it's the first visit by this client
-    
+    res.set('Set-Cookie', 'friend=yes; Max-Age=1000000;')
   }
 })
 
