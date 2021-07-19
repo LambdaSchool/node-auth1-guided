@@ -28,7 +28,11 @@ router.post('/login', async (req, res, next) => {
   // 4- start a session for that client (library)
   // 5- send back a session id to the client in a response header
   const { username, password } = req.body
-  const user = await User.findBy({ username })
+  const user = await User.findBy({ username }).first()
+
+  if (user && bcrypt.compareSync()) {
+
+  }
 })
 
 module.exports = router
