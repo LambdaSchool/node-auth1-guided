@@ -12,7 +12,7 @@ server.use(express.json());
 
 server.use('/api/users', usersRouter);
 
-server.get('/', (req, res) => {
+server.get('/', (req, res) => { // localhost:5000/
   res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
