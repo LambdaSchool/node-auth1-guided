@@ -10,6 +10,10 @@ router.post('/register', (req, res, next) => {
   // store user into db and send back nice message
   const { username, password } = req.body
   const hash = bcrypt.hashSync(password, 8) // 2 ^ 8
+  const newUser = {
+    username: username,
+    password: hash,
+  }
 
 })
 
