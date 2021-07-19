@@ -14,7 +14,8 @@ server.use(session({
   secret: 'this should come from an env var',
   cookie: {
     maxAge: 1000 * 60 * 60,
-    
+    secure: false, // if true cookien only gets set if connection is over HTTPS
+
   }
 }));
 server.use(helmet());
