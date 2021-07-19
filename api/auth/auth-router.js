@@ -22,7 +22,7 @@ router.post('/register', async (req, res, next) => {
 })
 
 router.post('/login', (req, res, next) => {
-  res.json('login wired!')
+  //
 })
 
 module.exports = router
