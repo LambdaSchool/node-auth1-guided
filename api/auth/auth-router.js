@@ -3,7 +3,7 @@ const router = express.Router()
 const User = require('../users/users-model')
 const bcrypt = require('bcryptjs')
 
-router.post('/register', (req, res, next) => {
+router.post('/register', async (req, res, next) => {
   // pull username and password from the request
   // validate username & password
   // hash the password with bcrypt
@@ -14,7 +14,7 @@ router.post('/register', (req, res, next) => {
     username: username,
     password: hash,
   }
-
+  const dbUser = await User.add(new)
 })
 
 router.post('/login', (req, res, next) => {
