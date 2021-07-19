@@ -15,7 +15,7 @@ server.use(session({
   cookie: {
     maxAge: 1000 * 60 * 60,
     secure: false, // if true cookien only gets set if connection is over HTTPS
-
+    httpOnly: false, // if true the cookie cannot be read from the javascript
   }
 }));
 server.use(helmet());
