@@ -24,7 +24,9 @@ server.use(session({
   store: new store({
     knex: require('../database/db-config'),
     tablename: 'sessions',
-    sidfieldname: ''
+    sidfieldname: 'sid',
+    createtable: true,
+    clearInterval: 1000 * 60 * 60,
   })
 }));
 server.use(helmet());
