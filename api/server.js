@@ -19,7 +19,7 @@ server.use(session({
   },
   rolling: true,
   resave: false, // this is only necessary with some long-term session storage solutions
-  saveUninitialized: false // if true a cookie would get set with every request
+  saveUninitialized: false // if true we might be in violation of GDPR laws
 }));
 server.use(helmet());
 server.use(express.json());
