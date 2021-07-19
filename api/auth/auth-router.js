@@ -27,6 +27,11 @@ router.post('/login', (req, res, next) => {
   // 3- use bcrypt to verify password against hash
   // 4- start a session for that client (library)
   // 5- send back a session id to the client in a response header
+  if (req.header.cookie) {
+    // the server has seen this client before
+  } else {
+    // 
+  }
 })
 
 module.exports = router
