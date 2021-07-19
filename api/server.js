@@ -20,7 +20,10 @@ server.use(session({
   },
   rolling: true,
   resave: false, // this is only necessary with some long-term session storage solutions
-  saveUninitialized: false // if true we might be in violation of GDPR laws
+  saveUninitialized: false, // if true we might be in violation of GDPR laws
+  store: new store({
+    knex: require('../')
+  })
 }));
 server.use(helmet());
 server.use(express.json());
