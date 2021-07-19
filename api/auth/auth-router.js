@@ -7,6 +7,7 @@ router.post('/register', (req, res, next) => {
   // pull username and password from the request
   // validate username & password
   // hash the password with bcrypt
+  // store user into db and send back nice message
 })
 
 router.post('/login', (req, res, next) => {
